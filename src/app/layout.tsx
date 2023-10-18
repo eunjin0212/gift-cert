@@ -1,16 +1,17 @@
-import type { Metadata } from 'next'
-import './globals.css'
+import '@/styles/globals.css'
 import Header from '@/components/header'
+import { Metadata } from 'next'
+import head from '@/lib/head.json'
+import { ReactNode } from 'react'
 
 export const metadata: Metadata = {
-  title: '상품권 교환',
-  description: '상품권 교환 페이지 설명',
+  title: head.title,
+  description: head.description,
 }
-
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: ReactNode
 }) {
   return (
     <html lang="ko">
