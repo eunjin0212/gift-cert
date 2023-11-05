@@ -1,7 +1,5 @@
-interface Menu {
-  name: string;
-  link: string;
-}
+import { Data } from './common';
+
 export default interface Menus {
-  menus: Menu[]
+  menus: Data[]
 }

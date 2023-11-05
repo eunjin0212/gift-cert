@@ -1,10 +1,6 @@
 {
   "menus": [
     {
-      "name": "홈",
-      "link": "/" 
-    },
-    {
       "name": "상품권 교환",
       "link": "/exchange" 
     },
@@ -12,5 +8,5 @@
       "name": "공지사항",
       "link": "/notice" 
     }
-  ] 
+  ]
 }
