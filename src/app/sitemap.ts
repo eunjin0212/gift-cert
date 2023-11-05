@@ -5,7 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: 'https://gift-cert-eunjin0212.vercel.app/',
       lastModified: new Date(),
-      changeFrequency: 'yearly',
+      changeFrequency: 'yearly', // 변경 빈도
       priority: 1,
     },
     {
