@@ -1,7 +1,7 @@
 "use client"
 
-import banner from '@/lib/banner.json'
 import Image from 'next/image'
+import banner from '@/lib/banner.json'
 import ChevronLeft from '@/icons/chevronLeft.svg'
 import ChevronRight from '@/icons/chevronRight.svg'
 import { useEffect, useRef, useState } from 'react'
@@ -27,7 +27,7 @@ export default function Carousel() {
 
   useEffect(() => {
     slideRef.current!.style.transition = "all 1s ease-in-out";
-    slideRef.current!.style.transform = `translateX(-${index}00%)`;
+    slideRef.current!.style.transform = `translateX(-${index}00vw)`;
   }, [index])
 
 
@@ -40,15 +40,14 @@ export default function Carousel() {
         width={30}
         height={30}
       />
-      <div className='h-96 w-auto flex items-center overflow-hidden' ref={slideRef}>
+      <div className='h-96 flex items-center overflow-hidden' style={{minWidth: `${image.length}00%`}} ref={slideRef}>
         {image.map((img) => 
-          <div key={img.name} className='min-w-full w-screen h-96 relative'>
-            {/* FIXME: 2번째 이미지 로드 안 됨 */}
+          <div key={img.name} className='min-w-[100vw] w-screen h-96 relative'>
             <Image
               alt={img.name}
               fill={true}
               src={img.link}
-              priority={true}
+              priority
             />
           </div>
         )}
