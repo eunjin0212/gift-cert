@@ -13,13 +13,16 @@ export default function Carousel() {
   const [transition, setTransition] = useState('');
 
   const cloneImages = useMemo(() => [image[image.length - 1], ...image, image[0]], [image]);
-  
+
   const lastImage = cloneImages.length - 1;
-  
+
   useEffect(() => {
     if (index === lastImage) {
       handleAutoSlide(1)
-    } else if (index === 0) {
+      return;
+    }
+
+    if (index === 0) {
       handleAutoSlide(lastImage - 1)
     };
   }, [cloneImages.length, lastImage, index]);
@@ -37,7 +40,9 @@ export default function Carousel() {
   }, [])
 
   function handleSlide(direction: 'prev' | 'next') {
-    direction === 'prev' ? setIndex((idx) => idx - 1) : setIndex((idx) => idx + 1);
+    direction === 'prev'
+      ? setIndex((idx) => idx - 1)
+      : setIndex((idx) => idx + 1);
     setTransition(transform);
   }
 
@@ -52,11 +57,11 @@ export default function Carousel() {
 
   return (
     <section className='w-full h-96 relative overflow-hidden'>
-      <div 
-        className='`w-full h-full flex items-center' 
-        style={{ transform: `translateX(-${index}00%)`, transition: `${transition}`, }} 
+      <div
+        className='`w-full h-full flex items-center'
+        style={{ transform: `translateX(-${index}00%)`, transition: `${transition}`, }}
       >
-        {cloneImages.map((img, idx) => 
+        {cloneImages.map((img, idx) =>
           <div key={`${img.name}_${idx}`} className='w-screen h-full relative flex-none'>
             <Image
               alt={img.name}
