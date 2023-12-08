@@ -4,45 +4,60 @@ import Image from 'next/image'
 import banner from '@/lib/banner.json'
 import ChevronLeft from '@/icons/chevronLeft.svg'
 import ChevronRight from '@/icons/chevronRight.svg'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
 export default function Carousel() {
   const { image } = banner
 
-  const slideRef = useRef<HTMLDivElement>(null)
-  const [index, setIndex] = useState(0)
+  const [index, setIndex] = useState(1)
+  const [transition, setTransition] = useState('');
 
+  const cloneImages = useMemo(() => [image[image.length - 1], ...image, image[0]], [image]);
+  
+  const lastImage = cloneImages.length - 1;
+  
+  useEffect(() => {
+    if (index === lastImage) {
+      handleAutoSlide(1)
+    } else if (index === 0) {
+      handleAutoSlide(lastImage - 1)
+    };
+  }, [cloneImages.length, lastImage, index]);
+
+  const transform = 'transform 500ms ease-in-out'
   useEffect(() => {
     const timer = setInterval(() => {
-      if (index === image.length - 1) {
-        setIndex(0)
-        return
-      }
-      setIndex((idx) => idx + 1)
-    }, 3000)
+      setIndex(idx => idx + 1)
+      setTransition(transform)
+    }, 2500)
+
     return () => {
-      clearInterval(timer);
-    };
-  }, [index, image])
+      clearInterval(timer)
+    }
+  }, [])
 
-  useEffect(() => {
-    slideRef.current!.style.transition = "all 1s ease-in-out";
-    slideRef.current!.style.transform = `translateX(-${index}00vw)`;
-  }, [index])
+  function handleSlide(direction: 'prev' | 'next') {
+    direction === 'prev' ? setIndex((idx) => idx - 1) : setIndex((idx) => idx + 1);
+    setTransition(transform);
+  }
 
+  function handleAutoSlide(idx: number) {
+    setTimeout(() => {
+      setIndex(idx);
+      setTransition('');
+    }, 500);
+  }
 
-  const iconClass = 'w-1/12 h-8 z-1 cursor-pointer absolute'
+  const iconClass = 'w-1/12 h-8 z-1 cursor-pointer'
+
   return (
-    <section className='w-full h-96 flex relative justify-between items-center'>
-      <ChevronLeft
-        className={[iconClass, 'left-0'].join(' ')}
-        alt='left'
-        width={30}
-        height={30}
-      />
-      <div className='h-96 flex items-center overflow-hidden' style={{minWidth: `${image.length}00%`}} ref={slideRef}>
-        {image.map((img) => 
-          <div key={img.name} className='min-w-[100vw] w-screen h-96 relative'>
+    <section className='w-full h-96 relative overflow-hidden'>
+      <div 
+        className='`w-full h-full flex items-center' 
+        style={{ transform: `translateX(-${index}00%)`, transition: `${transition}`, }} 
+      >
+        {cloneImages.map((img, idx) => 
+          <div key={`${img.name}_${idx}`} className='w-screen h-full relative flex-none'>
             <Image
               alt={img.name}
               fill={true}
@@ -52,12 +67,28 @@ export default function Carousel() {
           </div>
         )}
       </div>
-      <ChevronRight
-        className={[iconClass, 'right-0'].join(' ')}
-        alt='right'
-        width={30}
-        height={30}
-      />
+      <div
+        className='w-full mt-[-15px] h-[30px] absolute top-[50%] flex justify-between items-center'
+      >
+        <ChevronLeft
+          className={iconClass}
+          alt='left'
+          width={30}
+          height={30}
+          onClick={() => {
+            handleSlide('prev');
+          }}
+        />
+        <ChevronRight
+          className={iconClass}
+          alt='right'
+          width={30}
+          height={30}
+          onClick={() => {
+            handleSlide('next');
+          }}
+        />
+      </div>
     </section>
   )
 }
