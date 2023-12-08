@@ -5,6 +5,7 @@ import banner from '@/lib/banner.json'
 import ChevronLeft from '@/icons/chevronLeft.svg'
 import ChevronRight from '@/icons/chevronRight.svg'
 import { useEffect, useMemo, useState } from 'react'
+import Link from 'next/link'
 
 export default function Carousel() {
   const { image } = banner
@@ -57,43 +58,45 @@ export default function Carousel() {
 
   return (
     <section className='w-full h-96 relative overflow-hidden'>
-      <div
-        className='`w-full h-full flex items-center'
-        style={{ transform: `translateX(-${index}00%)`, transition: `${transition}`, }}
-      >
-        {cloneImages.map((img, idx) =>
-          <div key={`${img.name}_${idx}`} className='w-screen h-full relative flex-none'>
-            <Image
-              alt={img.name}
-              fill={true}
-              src={img.link}
-              priority
-            />
-          </div>
-        )}
-      </div>
-      <div
-        className='w-full mt-[-15px] h-[30px] absolute top-[50%] flex justify-between items-center'
-      >
-        <ChevronLeft
-          className={iconClass}
-          alt='left'
-          width={30}
-          height={30}
-          onClick={() => {
-            handleSlide('prev');
-          }}
-        />
-        <ChevronRight
-          className={iconClass}
-          alt='right'
-          width={30}
-          height={30}
-          onClick={() => {
-            handleSlide('next');
-          }}
-        />
-      </div>
+      <Link href={'/exchange'}>
+        <div
+          className='`w-full h-full flex items-center'
+          style={{ transform: `translateX(-${index}00%)`, transition: `${transition}`, }}
+        >
+          {cloneImages.map((img, idx) =>
+            <div key={`${img.name}_${idx}`} className='w-screen h-full relative flex-none'>
+              <Image
+                alt={img.name}
+                fill={true}
+                src={img.link}
+                priority
+              />
+            </div>
+          )}
+        </div>
+        <div
+          className='w-full mt-[-15px] h-[30px] absolute top-[50%] flex justify-between items-center'
+        >
+          <ChevronLeft
+            className={iconClass}
+            alt='left'
+            width={30}
+            height={30}
+            onClick={() => {
+              handleSlide('prev');
+            }}
+          />
+          <ChevronRight
+            className={iconClass}
+            alt='right'
+            width={30}
+            height={30}
+            onClick={() => {
+              handleSlide('next');
+            }}
+          />
+        </div>
+      </Link>
     </section>
   )
 }
