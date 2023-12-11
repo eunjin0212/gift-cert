@@ -51,8 +51,8 @@ function AdBanner() {
             />
         </div>
       </article>
-      <article className='relative w-full h-60 bg-slate-400'>
-        <Image src='' alt='ad' fill={true} />
+      <article className='relative w-full py-16 flex items-center justify-center'>
+        <Image src='/assets/ad.png' alt='ad' height={176} width={1146} className='bg-slate-100' />
       </article>
     </section>
   )
