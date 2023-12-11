@@ -1,5 +1,6 @@
 import AdBanner from '@/components/adBanner'
 import Carousel from '@/components/carousel'
+import Notice from '@/components/notice'
 
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
     <main>
       <Carousel />
       <AdBanner />
+      <Notice />
     </main>
   )
 }
