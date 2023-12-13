@@ -24,10 +24,12 @@ function Notice() {
         (
           <li
             key={noti.id}
-            className={['h-12 flex flex-row items-center justify-between',
-              thisMonth(noti.create_at) && 'text-red-400'].join(' ')}
+            className={[
+              'w-full h-12 flex flex-row items-center justify-between border-b border-b-neutral-300 relative pl-4',
+              thisMonth(noti.create_at) && 'text-red-400 before:absolute before:contents-[""] before:left-0 before:top-0 before:w-4 before:h-4 before:rounded-[0_0_100em_0] before:bg-red-400'
+            ].join(' ')}
           >
-            {noti.title}
+            <span>{noti.title}</span><span className='text-gray-400 text-xs'>{noti.create_at}</span>
           </li>
         )
         )}
