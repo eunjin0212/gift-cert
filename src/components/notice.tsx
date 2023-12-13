@@ -13,7 +13,7 @@ function Notice() {
   }, [])
 
   return (
-    <article className='w-2/5 min-h-[540px] py-14 px-[3.5rem] rounded-2xl shadow-[0_0_1rem_0_rgba(0,0,0,.1)]'>
+    <article className='w-2/5 min-w-[40%] min-h-[540px] py-14 px-[3.5rem] rounded-2xl shadow-[0_0_1rem_0_rgba(0,0,0,.1)]'>
       <Link href={'/notice'} className='text-2xl font-semibold flex items-center'>
         공지사항
         <ArrowRight className='ml-1 w-7 h-7 text-blue-400' />
