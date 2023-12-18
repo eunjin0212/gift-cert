@@ -1,4 +1,5 @@
 'use client';
+import Input from './input';
 import Step from './step'
 
 function Form() {
@@ -20,10 +21,10 @@ function Form() {
           <div className='text-lg font-medium'>핀번호 추출하기</div>
         </Step>
       </div>
-      <Step className='w-2/6' step='03' title='주문정보 입력'>
-        <div className='text-lg font-medium'>
-          <span className='text-red-400 mr-1'>*</span>은행명
-        </div>
+      <Step className='w-2/6' childrenClass='flex flex-col gap-6' step='03' title='주문정보 입력'>
+        <Input name='name' type='tel' label='예금주 이름' required />
+        <Input name='bankNumber' type='tel' label='계좌번호' required />
+        <Input name='phoneNumber' type='tel' label='휴대폰 번호' required />
       </Step>
     </form>
   )
