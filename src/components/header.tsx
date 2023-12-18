@@ -5,6 +5,7 @@ import Image from 'next/image';
 
 export default function Header() {
   const { menus }: Menus = header
+  
   return (
     <header className='max-w-full'>
       <nav className='mx-auto bg-white flex items-center justify-between lg:px-8' aria-label='Global'>

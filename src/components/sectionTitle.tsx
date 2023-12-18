@@ -4,13 +4,15 @@ interface Props {
 }
 
 function SectionTitle(props: Props) {
+  const { title, description } = props
+
   return (
     <div className='form-title text-center mb-12'>
       <h2 className='font-bold text-3xl'>
-        {props.title}
+        {title}
       </h2>
-      {props.description && <div className='inline-flex flex-row mt-2 gap-1'>
-        <p>{props.description}</p>
+      {description && <div className='inline-flex flex-row mt-2 gap-1'>
+        <p>{description}</p>
       </div>}
     </div>
   )

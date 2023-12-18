@@ -12,6 +12,7 @@ interface BannerStatisticsTextProps {
 
 function BannerStatisticText (props: BannerStatisticsTextProps) {
   const { icon, label, count, text } = props
+  
   return (
     <dl className='flex items-center'>
       <dt className='text-blue-400 mr-4'>
