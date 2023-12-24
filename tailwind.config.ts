@@ -19,6 +19,14 @@ const config: Config = {
       },
       animation: {
         wiggle: 'wiggle 1s ease-in-out infinite',
+      },
+      colors: {
+        main: {
+          placeholder: '#929292',
+          'not-selected': '#B9B9B9',
+          positive: '#007AFF',
+          secondary: '#F8F8F8',
+        }
       }
     },
   },
