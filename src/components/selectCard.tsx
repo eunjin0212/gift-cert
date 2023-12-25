@@ -11,7 +11,6 @@ interface Props {
 }
 function SelectCard(props: Props) {
   const { img, label, value, name, onClick } = props
-  const checkClass = 'stroke-2 w-9 h-9 p-[2px] rounded-full border-4'
   const isChecked = useMemo(() => value === name, [value, name])
   return (
     <div 
@@ -32,7 +31,7 @@ function SelectCard(props: Props) {
         />
         {label}
       </label>
-      <CheckRound className={[checkClass, isChecked ? 'border-white bg-white text-main-positive' : 'border-main-not-selected text-main-not-selected bg-transparent'].join(' ')} />
+      <CheckRound className={['round-check', isChecked ? 'border-white bg-white text-main-positive' : 'border-main-not-selected text-main-not-selected bg-transparent'].join(' ')} />
     </div>
   )
 }

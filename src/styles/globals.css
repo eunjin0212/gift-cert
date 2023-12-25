@@ -6,4 +6,7 @@
   .page-size {
     @apply max-w-[80rem] px-5 w-full mx-auto target:max-w-5xl;
   }
+  .round-check {
+    @apply stroke-2 w-9 h-9 p-[2px] rounded-full border-[3px];
+  }
 }
