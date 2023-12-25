@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import CheckRound from '@/icons/checkRound.svg'
+import CheckRound from '@/assets/checkRound.svg'
 import { useMemo, useState } from 'react';
 
 interface Props {
@@ -21,7 +21,7 @@ function SelectCard(props: Props) {
       }}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={img} alt='gift cert' className='w-[2.7rem] mx-auto overflow-hidden shadow-[0_0_1rem_0_rgba(0,0,0,.08)]' />
+      <img src={img} alt='gift cert' className='w-[2.7rem] mx-auto rounded-lg shadow-[0_0_1rem_0_rgba(0,0,0,.08)]' />
       <label className='text-center whitespace-pre-line my-4 font-medium text-sm'>
         <input
           type='radio'

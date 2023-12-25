@@ -14,7 +14,7 @@ export default function RootLayout({
   children: ReactNode
 }) {
   return (
-    <html lang="ko">
+    <html lang="ko" className='tablet:text-xs mobile:text-2xl'>
       <body className='select-none font-pretendard'>
         <Header />
         {children}

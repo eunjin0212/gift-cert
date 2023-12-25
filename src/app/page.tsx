@@ -10,7 +10,7 @@ export default function Home() {
     <main>
       <Carousel />
       <AdBanner />
-      <section className='flex gap-10 max-w-[80rem] pb-24 mx-auto justify-between'>
+      <section className='flex justify-between gap-10 pb-24 page-size'>
         <Orders />
         <Notice />
       </section>

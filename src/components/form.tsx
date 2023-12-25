@@ -15,7 +15,7 @@ function Form() {
   return (
     <form
       onSubmit={() => handleSubmit()}
-      className='flex flex-row max-w-[80rem] w-full mx-auto gap-7'
+      className='flex flex-row gap-7 w-full page-size'
     >
       <div className='w-4/6'>
         <Step className='mb-9' step='01' title='상품권 종류 선택'>

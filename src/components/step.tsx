@@ -19,7 +19,7 @@ function Step(props: Props) {
       <div 
         className={
           [
-            'p-11 bg-white rounded-2xl shadow-[0_0_1rem_0_rgba(0,0,0,.1)]', 
+            'p-11 bg-white rounded-2xl shadow-[0_0_1rem_0_rgba(0,0,0,.1)] tablet:p-5', 
             childrenClass
           ].join(' ')
         }

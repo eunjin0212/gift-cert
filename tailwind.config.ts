@@ -21,6 +21,10 @@ const config: Config = {
       animation: {
         wiggle: 'wiggle 1s ease-in-out infinite',
       },
+      screens: {
+        tablet: { max: '1024px' },
+        mobile: { max: '768px' },
+      },
       colors: {
         main: {
           placeholder: '#929292',
