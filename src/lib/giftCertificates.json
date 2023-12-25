@@ -1,9 +1,44 @@
 {
   "data": [
     {
-      "label": "컬쳐랜드 교환권",
+      "label": "컬쳐랜드\n상품권",
+      "img": "/assets/imgs/culture_land.png",
+      "name": "culture_cert"
+    },
+    {
+      "label": "컬쳐랜드\n교환권",
       "img": "/assets/imgs/culture_land.png",
       "name": "culture"
+    },
+    {
+      "label": "해피머니\n상품권",
+      "img": "/assets/imgs/happy_money.png",
+      "name": "happy_money_cert"
+    },
+    {
+      "label": "해피머니\n교환권",
+      "img": "/assets/imgs/happy_money.png",
+      "name": "happy_money"
+    },
+    {
+      "label": "북앤라이프\n상품권",
+      "img": "/assets/imgs/book_and_life.png",
+      "name": "book_and_life_cert"
+    },
+    {
+      "label": "북앤라이프\n교환권",
+      "img": "/assets/imgs/book_and_life.png",
+      "name": "book_and_life"
+    },
+    {
+      "label": "구글기프트카드\n카톡 교환권",
+      "img": "/assets/imgs/google.png",
+      "name": "google"
+    },
+    {
+      "label": "틴캐시\n상품권",
+      "img": "/assets/imgs/teen_cash.png",
+      "name": "teen_cash"
     }
   ]
 }

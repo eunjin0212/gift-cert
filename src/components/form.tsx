@@ -6,9 +6,7 @@ import SelectCard from './selectCard';
 import Step from './step'
 import giftCertificates from '@/lib/giftCertificates.json'
 
-
 function Form() {
-
   function handleSubmit() {
     //
   }
@@ -22,7 +20,7 @@ function Form() {
       <div className='w-4/6'>
         <Step className='mb-9' step='01' title='상품권 종류 선택'>
           <div className='text-lg font-medium'>판매할 상품권 종류 선택</div>
-          <div className='mt-[18px] grid grid-cols-6'>
+          <div className='mt-[18px] grid grid-cols-6 gap-2'>
             {giftCertificates.data.map((giftCert) => 
               <SelectCard
                 key={giftCert.name}
