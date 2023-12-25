@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <body className='select-none'>
+      <body className='select-none font-pretendard'>
         <Header />
         {children}
       </body>
