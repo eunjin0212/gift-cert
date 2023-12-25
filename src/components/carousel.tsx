@@ -2,8 +2,8 @@
 
 import Image from 'next/image'
 import banner from '@/lib/banner.json'
-import ChevronLeft from '@/icons/chevronLeft.svg'
-import ChevronRight from '@/icons/chevronRight.svg'
+import ChevronLeft from '@/assets/chevronLeft.svg'
+import ChevronRight from '@/assets/chevronRight.svg'
 import { useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
 

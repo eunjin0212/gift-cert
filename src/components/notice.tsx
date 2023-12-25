@@ -1,7 +1,7 @@
 import notice from '@/lib/notice.json'
 import type Notice from '@/types/notice'
 import Link from 'next/link'
-import ArrowRight from '@/icons/arrowRight.svg'
+import ArrowRight from '@/assets/arrowRight.svg'
 import { useMemo } from 'react'
 
 function Notice() {

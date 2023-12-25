@@ -1,5 +1,5 @@
-import Exchange from '@/icons/exchange.svg'
-import Clock from '@/icons/clock.svg'
+import Exchange from '@/assets/exchange.svg'
+import Clock from '@/assets/clock.svg'
 import type { ReactNode } from 'react'
 import Image from 'next/image';
 

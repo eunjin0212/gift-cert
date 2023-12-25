@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import ArrowRight from '@/icons/arrowRight.svg'
+import ArrowRight from '@/assets/arrowRight.svg'
 import type Orders from '@/types/orders'
 
 function Orders() {
